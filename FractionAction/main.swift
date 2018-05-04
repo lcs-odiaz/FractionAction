@@ -74,11 +74,39 @@ while 1 == 1 {
     break
 }
 
-print("")
+
+
 // PROCESS
 // Implement the primary logic of the problem here
+
+var quotient = numerator / denominator
+var remainder = numerator % denominator
+
+if remainder > 0{
+    for i in 2 ... denominator{
+    if remainder % i == 0 && denominator % i == 0{
+        numerator = remainder / i
+        denominator = denominator / i
+        break
+    } else {
+        continue
+    }
+    
+}
+}
 
 
 // OUTPUT
 // Report results to the user here
+
+if remainder == 0{
+    print("The result is \(quotient)")
+}
+if quotient > 0 || remainder > 0 {
+    print("The result is \(quotient) \(numerator) / \(denominator)")
+}
+if quotient == 0{
+    print("The result is \(numerator) / \(denominator)")
+}
+
 
