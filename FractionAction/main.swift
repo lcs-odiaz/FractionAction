@@ -83,13 +83,14 @@ var quotient = numerator / denominator
 var remainder = numerator % denominator
 
 if remainder > 0{
-    for i in stride(from: denominator/2, to: 2, by: -1) {
-    if remainder % i == 0 && denominator % i == 0{
-        numerator = remainder / i
-        denominator = denominator / i
+    for GFC in stride(from: numerator, to: 2, by: -1) {
+    if remainder % GFC == 0 && denominator % GFC == 0{
+        numerator = remainder / GFC
+        denominator = denominator / GFC
         break
     } else {
         continue
+        
     }
     
 }
