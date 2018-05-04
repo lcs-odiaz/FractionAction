@@ -83,7 +83,7 @@ var quotient = numerator / denominator
 var remainder = numerator % denominator
 
 if remainder > 0{
-    for i in 2 ... denominator{
+    for i in stride(from: denominator/2, to: 2, by: -1) {
     if remainder % i == 0 && denominator % i == 0{
         numerator = remainder / i
         denominator = denominator / i
@@ -101,11 +101,9 @@ if remainder > 0{
 
 if remainder == 0{
     print("The result is \(quotient)")
-}
-if quotient > 0 || remainder > 0 {
+} else if quotient > 0 && remainder > 0 {
     print("The result is \(quotient) \(numerator) / \(denominator)")
-}
-if quotient == 0{
+} else if quotient == 0{
     print("The result is \(numerator) / \(denominator)")
 }
 
